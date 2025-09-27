@@ -2,8 +2,8 @@ from zipfile import ZipFile
 import os
 
 # Modify Base on current working folder:
-CURRENT_DIRECTORY = "chartFolders/PRISM PLUS"
-RESULT_DIRECTORY = "chartZips/PRISM PLUS"
+CURRENT_DIRECTORY = ""
+RESULT_DIRECTORY = ""
 
 chartPaths = {}
 
@@ -17,4 +17,5 @@ for chartPath in chartPaths:
     
     with ZipFile(zipName, "w") as zip:    
         for file in chartPaths[chartPath]:
+
             zip.write(f"{chartPath}/{file}", file)
